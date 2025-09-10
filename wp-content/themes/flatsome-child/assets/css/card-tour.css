@@ -1,0 +1,249 @@
+.ctp-trip-section {
+  box-sizing: border-box;
+}
+
+.ctp-trip-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+  gap: 24px;
+}
+
+.ctp-trip-title {
+  font-size: 34px;
+  margin: 0;
+  line-height: 1.05;
+  font-weight: 400;
+}
+
+.ctp-trip-sub {
+  color: #8b8b8b;
+  margin-top: 6px;
+  font-size: 15px;
+  text-align: justify;
+}
+
+.ctp-view-all {
+  font-size: 14px;
+  color: #ff6a38;
+  text-decoration: none;
+  font-weight: 600;
+  align-self: center;
+  white-space: nowrap;
+}
+
+.ctp-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+}
+
+.ctp-card {
+  position: relative;
+  border-radius: 14px;
+  z-index: 1;
+  height: 360px;
+  display: flex;
+  align-items: flex-end;
+  box-shadow: 0 8px 20px rgba(12, 12, 12, 0.06);
+  background-size: cover;
+  background-position: center;
+  transition: all 0.3s ease;
+}
+
+.ctp-card:hover .ctp-card-shadow {
+  transform: scale(1.02);
+  opacity: 1;
+  visibility: visible;
+  top: 10px;
+  left: -6px;
+  right: -6px;
+  bottom: -10px;
+  z-index: -1;
+}
+
+.ctp-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.12) 0%,
+    rgba(0, 0, 0, 0.55) 55%,
+    rgba(0, 0, 0, 0.78) 100%
+  );
+  pointer-events: none;
+  border-radius: 14px;
+}
+
+.ctp-card-inner {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  padding: 22px;
+  box-sizing: border-box;
+  color: #fff;
+  text-decoration: none;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 14px;
+}
+
+.ctp-card-shadow {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  filter: blur(8px);
+  transform: scale(1.02);
+  z-index: -1;
+  transition: all 0.3s ease;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-filter: blur(10px);
+}
+
+.ctp-location {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.92);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ctp-brand-dot {
+  width: 8px;
+  height: 8px;
+  background: #ff6a38;
+  border-radius: 50%;
+  margin-right: 6px;
+  display: inline-block;
+}
+
+.ctp-title {
+  font-size: 20px;
+  line-height: 1.15;
+  margin: 0 0 12px 0;
+  font-weight: 500;
+  text-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+  color: #fff;
+}
+
+.ctp-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.ctp-duration {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 6px;
+  font-size: 20px;
+}
+
+.ctp-duration-value {
+  opacity: 0.9;
+}
+
+.ctp-from {
+  font-weight: 600;
+}
+
+.ctp-price-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ctp-old-price {
+  text-decoration: line-through;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 13px;
+}
+
+.ctp-price {
+  color: #ff6a38;
+  font-weight: 800;
+  font-size: 20px;
+}
+
+.ctp-badge {
+  position: absolute;
+  left: 22px;
+  top: 60px;
+  background: #ff5a2b;
+  color: #fff;
+  padding: 4px 12px;
+  border-radius: 8px;
+  font-weight: 700;
+  z-index: 4;
+  font-size: 13px;
+}
+
+.ctp-bookmark {
+  position: absolute;
+  right: 14px;
+  top: 14px;
+  width: 44px;
+  height: 44px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 4;
+}
+
+.ctp-rating {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.ctp-stars svg {
+  vertical-align: middle;
+}
+
+/* responsive */
+@media (max-width: 1200px) {
+  .ctp-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .ctp-card {
+    height: 320px;
+  }
+}
+@media (max-width: 900px) {
+  .ctp-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .ctp-card {
+    height: 300px;
+  }
+  .ctp-trip-title {
+    font-size: 26px;
+  }
+}
+@media (max-width: 600px) {
+  .ctp-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .ctp-card {
+    height: 260px;
+    border-radius: 10px;
+  }
+  .ctp-trip-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
